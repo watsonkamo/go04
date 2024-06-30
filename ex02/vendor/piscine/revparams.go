@@ -13,7 +13,27 @@ func PrintStr(s string) {
 }
 
 func RevParams() {
-	for i := len(os.Args) - 1; i > 0; i-- {
+	argCount := 0
+	for range os.Args {
+		argCount++
+	}
+
+	for i := argCount - 1; i > 0; i-- {
 		PrintStr(os.Args[i])
 	}
 }
+
+// func RevParams() {
+// 	argCount := StrLen(os.Args)
+
+// 	for i := argCount - 1; i > 0; i-- {
+// 		PrintStr(os.Args[i])
+// 	}
+// }
+
+// func RevParams() {
+// 	args := os.Args
+// 	for i := StrLen(string(args[])) - 1; i > 0; i-- {
+// 		PrintStr(os.Args[i])
+// 	}
+// }

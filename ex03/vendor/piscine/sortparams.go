@@ -14,14 +14,19 @@ func PrintStr(s string) {
 
 func SortParams() {
 	args := os.Args
-	for i := 1; i < len(args); i++ {
-		for j := i + 1; j < len(args); j++ {
+	argCount := 0
+	for range args {
+		argCount++
+	}
+
+	for i := 1; i < argCount; i++ {
+		for j := i + 1; j < argCount; j++ {
 			if args[i] > args[j] {
 				args[i], args[j] = args[j], args[i]
 			}
 		}
 	}
-	for i := 1; i < len(args); i++ {
+	for i := 1; i < argCount; i++ {
 		PrintStr(args[i])
 	}
 }
